@@ -1,5 +1,5 @@
 export default function createStore(reducer: any) {
-  let curState: null = null
+  let curState: any = null
   let listeners: any[] = []
   const getState = () => {
     return curState
@@ -8,6 +8,7 @@ export default function createStore(reducer: any) {
     curState = reducer(curState, action)
     listeners.forEach((listener) => listener())
   }
+
   const subscribe = (listener: any) => {
     listeners.push(listener)
     return () => {
@@ -15,6 +16,8 @@ export default function createStore(reducer: any) {
       listeners.splice(index, 1)
     }
   }
+  dispatch({ type: 'REDUX/INIT' })
+
   return {
     getState,
     dispatch,

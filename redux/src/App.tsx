@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import store from './store'
 function App() {
-  const [count, setCount] = useState(store.getState())
+  const [count, setCount] = useState(-1)
   const unSubscribe = store.subscribe(() => {
     setCount(store.getState())
   })
