@@ -9,7 +9,7 @@ function App() {
     store.dispatch((dispatch, getState) => {
       setTimeout(() => {
         dispatch({ type: 'INCREMENT' })
-        console.log('state : ', getState)
+        console.log('state : ', getState())
       }, 1000)
     })
   }
