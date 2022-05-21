@@ -1,4 +1,7 @@
-export default function createStore(reducer) {
+export default function createStore(reducer: any, enhancer?: any) {
+  if (enhancer) {
+    return enhancer(createStore)(reducer)
+  }
   let curState
   let listeners: any[] = []
   const getState = () => {

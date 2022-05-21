@@ -6,7 +6,12 @@ function App() {
     setCount(Math.random()) // 起到强制更新的作用
   })
   const add = () => {
-    store.dispatch({ type: 'INCREMENT' })
+    store.dispatch((dispatch, getState) => {
+      setTimeout(() => {
+        dispatch({ type: 'INCREMENT' })
+        console.log('state : ', getState)
+      }, 1000)
+    })
   }
   useEffect(() => {
     return () => {

@@ -1,5 +1,5 @@
-import { createStore } from './myRedux'
-
+import { createStore, applyMiddleware } from './myRedux'
+import thunk from 'redux-thunk'
 function reducer(state = 0, { type }) {
   switch (type) {
     case 'INCREMENT':
@@ -11,5 +11,5 @@ function reducer(state = 0, { type }) {
   }
 }
 
-const store = createStore(reducer)
+const store = createStore(reducer, applyMiddleware(thunk))
 export default store
