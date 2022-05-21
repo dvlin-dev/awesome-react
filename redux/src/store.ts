@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from './myRedux'
-import thunk from 'redux-thunk'
+import thunk from './thunk'
 function reducer(state = 0, { type }) {
   switch (type) {
     case 'INCREMENT':
