@@ -1,6 +1,6 @@
 import { createStore } from './myRedux'
 
-function reducer(state = 0, { type }: { type: string }) {
+function reducer(state = 0, { type }) {
   switch (type) {
     case 'INCREMENT':
       return state + 1
