@@ -20,7 +20,7 @@ function App() {
   })
   return (
     <>
-      <div>{store.getState()}</div>
+      <div>{store.getState().count}</div>
       <div>{count}</div>
       <button onClick={add}>click</button>
     </>
