@@ -1,6 +1,5 @@
 import { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { connect,bindActionCreators } from './myReactRedux/index'
 
 @connect(
   ({ count }) => ({ count }),
@@ -12,7 +11,7 @@ import { bindActionCreators } from 'redux'
   //   return { dispatch, ...creators }
   // }
 
-  (dispatch) => {
+  (dispatch: any) => {
     let creators = {
       ADD: () => ({ type: 'ADD' }),
     }

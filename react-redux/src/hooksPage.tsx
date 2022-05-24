@@ -1,10 +1,12 @@
 import { useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from './myReactRedux/index'
 
 export default function HookstPage() {
   const count = useSelector((state) => state.count)
   const dispatch = useDispatch()
-  const ADD = useCallback(() => dispatch({ type: 'ADD' }), [])
+  const ADD = useCallback(() => {
+    dispatch({ type: 'ADD' })
+  }, [])
   return (
     <>
       {count}
